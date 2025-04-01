@@ -28,7 +28,7 @@ while lives > 0:
         
     if "_" not in display:
         print("*******************🥇WINNER***************************\n")
-        game_over = True
+        break
 
 print("*********************😿  DISSAPOINTED**************************\n")
 print(f"The word was {word}. Maybe next time!\n")
