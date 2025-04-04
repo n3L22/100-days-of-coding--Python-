@@ -3,8 +3,6 @@ def format_name(name, surname):
     f_sname = surname.capitalize()
     return (f_name, f_sname)
 
-
-    
     
 #with return we can store it in a variable 
 print(format_name("ANTONELA", "RAKIPAJ"))
@@ -14,6 +12,8 @@ print(format_name("ANTONELA", "RAKIPAJ"))
 store_it_here = format_name("ANTONELA", "RAKIPAJ")
 print(store_it_here)
 
+#to assign a function into a variable
+variable_name = format_name #make sure you dont have the parenthesis 
 
 #why is this useful --> for example we want to use a function inside a function 
 def function_1(text):
