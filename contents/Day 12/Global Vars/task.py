@@ -17,7 +17,6 @@ drink_potion()
 player_health  = 1
 
 def drink_potion(health):
-    print('test',player_health)
     return health + 1
 
 player_health = drink_potion(player_health)
