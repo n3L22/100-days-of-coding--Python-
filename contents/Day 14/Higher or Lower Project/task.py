@@ -1,17 +1,5 @@
 import random
-
-facts = {
-    # This is a dictionary holding the facts about the game.
-    # Keys are the fact names and values are followers in millions
-    "NASA - Spaceship company": 96.7,
-    "Camilla Cabello - singer": 64.2,
-    "Tesla - Electric car company": 10,
-    "Bill Gates - businessman": 11.8,
-    "Jeff Bezos - businessman": 43,
-    "Mark Zuckerberg - Chief executive officer of Meta": 15.4,
-    "Cristiano Ronaldo - footballer": 652,
-    "Lionel Messi - footballer": 505,
-}
+from art_facts import facts, art
 
 # Initialize the game
 score = 0
@@ -20,6 +8,7 @@ score = 0
 available_options = list(facts.keys())
 current_a = random.choice(available_options)
 
+print( "Welcome to the Higher or Lower game!")
 # Get B, making sure it's different from A
 available_options.remove(current_a)
 current_b = random.choice(available_options)
@@ -28,7 +17,7 @@ current_b = random.choice(available_options)
 while True:
     # Display the current options
     print(f"Compare A: {current_a}")
-    print("art goes here \n\n\n\n\n\n\n\n\n")
+    print(art)
     print(f"Against B: {current_b}")
     
     # Get the player's choice
