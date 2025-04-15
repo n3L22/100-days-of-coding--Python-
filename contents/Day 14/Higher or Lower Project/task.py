@@ -1,53 +1,59 @@
 import random
 from art_facts import facts, art
 
-# Initialize the game
 score = 0
 
-# Get initial options A and B
-available_options = list(facts.keys())
-current_a = random.choice(available_options)
+# Get initial options
+def get_options():
+    variants = []
+    for i in range(2):  # Loop twice
+        random_fact = random.choice(list(facts.keys()))
+        variants.append(random_fact)
+    return variants
 
-print( "Welcome to the Higher or Lower game!")
-# Get B, making sure it's different from A
-available_options.remove(current_a)
-current_b = random.choice(available_options)
+# Initial selection
+options = get_options()
+a = options[0]
+b = options[1]
 
-# Main game loop
-while True:
-    # Display the current options
-    print(f"Compare A: {current_a}")
+# Game loop
+game_active = True
+while game_active:
+    # Display current comparison
+    print(f"Compare A: {a}")
     print(art)
-    print(f"Against B: {current_b}")
+    print(f"Against B: {b}")
     
-    # Get the player's choice
-    while True:
-        choice = input("Which one do you think has more followers? 'A' or 'B': ").lower()
-        if choice in ['a', 'b']:
-            break
-        print("Invalid input. Please enter 'A' or 'B'.")
+    # Get user choice
+    choice = input("Which one do you think has more followers? 'A' or 'B': ").lower()
     
-    # Check if the player's answer is correct
+    # Process the choice
     if choice == 'a':
-        if facts[current_a] > facts[current_b]:
+        if facts[a] > facts[b]:
             score += 1
             print(f"You are right!! Your score is {score}")
-            # Keep A as A, get new B
-            available_options = list(facts.keys())
-            available_options.remove(current_a)
-            current_b = random.choice(available_options)
+            # Keep a, get new b
+            temp_b = b
+            while temp_b == b:  # Make sure we get a different fact
+                temp_b = random.choice(list(facts.keys()))
+            b = temp_b
         else:
-            print(f"You lose. Your final score was {score}")
-            break
-    else:  # choice == 'b'
-        if facts[current_b] > facts[current_a]:
+            print(f"You lose, Your score was {score}")
+            game_active = False
+            
+    elif choice == 'b':
+        if facts[b] > facts[a]:
             score += 1
             print(f"You are right!! Your score is {score}")
-            # Move B to position A, get new B
-            current_a = current_b
-            available_options = list(facts.keys())
-            available_options.remove(current_a)
-            current_b = random.choice(available_options)
+            # Move b to a, get new b
+            a = b
+            temp_b = b
+            while temp_b == b:  # Make sure we get a different fact
+                temp_b = random.choice(list(facts.keys()))
+            b = temp_b
         else:
-            print(f"You lose. Your final score was {score}")
-            break
+            print(f"You lose, Your score was {score}")
+            game_active = False
+    else:
+        print("Invalid input. Please enter 'A' or 'B'.")
+
