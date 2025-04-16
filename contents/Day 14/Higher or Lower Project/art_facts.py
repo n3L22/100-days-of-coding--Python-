@@ -1,4 +1,4 @@
-facts = {
+data = {
     # This is a dictionary holding the facts about the game.
     # Keys are the fact names and values are followers in millions
     "NASA - Spaceship company": 96.7,
