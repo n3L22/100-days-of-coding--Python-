@@ -11,6 +11,7 @@ def operations(coffee_type):
     # Now deduct the ingredients using the same loop
     for i in MENU[coffee_type]["ingredients"]:
         resources[i] -= MENU[coffee_type]["ingredients"][i]
+    print(f"Enjoy your {coffee_type}! ☀️")
             
     return True  # Successfully made the coffee
 
