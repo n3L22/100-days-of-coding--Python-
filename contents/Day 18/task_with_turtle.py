@@ -45,5 +45,15 @@ from random import random, choice
 #     timmy.forward(20)
     
 
+#challenge 5 Draw a spirograph 
+# timmy.speed(0)
+# for _ in range (36):
+#     rgb = random(),random(),random()
+#     timmy.color(rgb)
+#     timmy.circle(50)
+#     timmy.right(10)
+    
+
+
 screen = Screen()
 screen.exitonclick()
