@@ -30,6 +30,7 @@ dots = 100
 # Starting position
 x = -230
 y = -225
+arrow.hideturtle()
 arrow.penup()  # Keep pen up for positioning
 arrow.goto(x, y)
 # Create a 10x10 grid of circles
