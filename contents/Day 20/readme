@@ -1,0 +1,9 @@
+Before creating the game make sure to divide the game into small parts. 
+
+#step 1- create a snake body 
+#step 2 - move the snake 
+#step 3- control the snake
+#step 4 - make the food and detect the collision with the food 
+#step 5 - create a scoreboard 
+#step 6 - detect collision with walls 
+#step 7 - detect collision with its own tail 
