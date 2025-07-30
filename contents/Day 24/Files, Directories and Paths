@@ -1,2 +1,7 @@
 open, read, close files on the system 
 To see where it was implemented go to day 20-21!! 🐍 GAME
+
+##To access files by relative paths in case you have something 2 folders away: ../../our_name_of_file.txt 
+Relative path is connected to your current folder where are you programming to 
+
+Meanwhile absolute path is always directed to the root. 
