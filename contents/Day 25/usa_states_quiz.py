@@ -26,14 +26,28 @@ while len(correct_answer) < 50:
         t.penup()             
         t.goto(x,y)     
         t.write(answer_state)
+    elif answer_state == "Exit" or answer_state == "exit":
+        break
+        
     else:
         message_turtle.goto(0,0) 
         message_turtle.write("That's a duplicate!", align="center", font=("Arial", 16, "normal"))
         time.sleep(2)
         message_turtle.clear()
+        
+        
+missed_data = []
+for item in data["state"].values:
+    if item not in correct_answer:
+        missed_data.append(item)
 
-message_turtle.goto(0,0) 
-message_turtle.write("YOU ARE SMART!!!!", align="center", font=("Arial", 16, "normal"))
+new_dataframe = pandas.DataFrame(missed_data)
+
+new_dataframe.columns = ['missed_states'] 
+new_dataframe.to_csv(r"100-days-of-coding--Python-\contents\Day 25\missed_data.csv")
+
+# message_turtle.goto(0,0) 
+# message_turtle.write("YOU ARE SMART!!!!", align="center", font=("Arial", 16, "normal"))
 
 
 #to get the exact coordinates 
