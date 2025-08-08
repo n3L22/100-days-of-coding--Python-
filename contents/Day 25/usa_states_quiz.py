@@ -26,7 +26,7 @@ while len(correct_answer) < 50:
         t.penup()             
         t.goto(x,y)     
         t.write(answer_state)
-    elif answer_state == "Exit" or answer_state == "exit":
+    elif answer_state.lower() == "exit":
         break
         
     else:
@@ -36,11 +36,12 @@ while len(correct_answer) < 50:
         message_turtle.clear()
         
         
-missed_data = []
-for item in data["state"].values:
-    if item not in correct_answer:
-        missed_data.append(item)
+# missed_data = []
+# for item in data["state"].values:
+#     if item not in correct_answer:
+#         missed_data.append(item)
 
+missed_data = [item for item in data["state"].values if item not in correct_answer]
 new_dataframe = pandas.DataFrame(missed_data)
 
 new_dataframe.columns = ['missed_states'] 
