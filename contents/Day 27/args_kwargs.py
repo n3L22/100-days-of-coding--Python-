@@ -11,6 +11,18 @@ add(1,2,3,4,5)
 
 #these args are also known as positional arguments 
 
+#usually we have **arg ang **kwarg (key word arguments) to put inside methods for example
+#a kwarg:
+''' key word argument are when you actually call them in methods write(text="what do you write)'''
+
+#an arg:
+'''when a method is arg it means that you only have to put that others will be default '''
+
+
+#to make unlimited number of arguments we can simply use *args
+def add(*args):
+    for n in args:
+        print(n)
 
 
 '''  **KWARGS  '''
