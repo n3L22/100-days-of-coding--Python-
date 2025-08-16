@@ -18,11 +18,15 @@ LONG_BREAK_MIN = 20
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
 window.title("Pomodoro")
-canvas = Canvas(width=200, height=224)
+window.config(padx=100, pady=50, bg=YELLOW)
+
+canvas = Canvas(width=200, height=224, bg=YELLOW, highlightthickness=0)
 #you need the photoimage to read through a file
-tomato_img = PhotoImage(file="100-days-of-coding--Python-\Day 28\tomato.png")
+tomato_img = PhotoImage(file=r"100-days-of-coding--Python-\Day 28\tomato.png")
 #this is the middle so the centre
-canvas.create_image(100,112,tomato_img)
+canvas.create_image(100,112,image=tomato_img)
+canvas.create_text(100,130, text="00:00", fill="white", font=(FONT_NAME, 35, "bold"))
+canvas.pack()
 
 
 
