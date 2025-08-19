@@ -16,6 +16,6 @@ with open("100-days-of-coding--Python-\contents\Day 24\my_file.txt", mode='a') a
     
     
 #to create a new file simply use the with open, mode write and it will create it for you 
-with open("100-days-of-coding--Python-\contents\Day 24\hmmm_text", mode='w') as file:
+with open("100-days-of-coding--Python-\contents\Day 24\hmmm_text", mode='a') as file:
     file.write("awesome")
-    
+    file.write("second attempt")
