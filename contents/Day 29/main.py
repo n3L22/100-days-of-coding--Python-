@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 from random import randint, choice, shuffle
+import pyperclip
 #---------------------------PASSWORD GENERATOR-------------------#
 def generate():
     letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
@@ -20,6 +21,7 @@ def generate():
     password = "".join(password_list)
 
     pass_entry.insert(0, password)
+    pyperclip.copy(password)
 
 #-------------------------------SAVE PASSWORD-----------------------------#
 def save():
@@ -72,7 +74,7 @@ website_entry.grid(row=1, column=1, columnspan=2)
 
 email_entry = Entry(width=54)
 email_entry.grid(row=2, column=1, columnspan=2)
-email_entry.insert(0, "nelarakipaj@gmail.com")
+email_entry.insert(0, "nneeeelllaa@gmail.com")
 
 pass_entry = Entry(width=35)
 pass_entry.grid(column=1, row=3)
